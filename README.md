@@ -6,4 +6,3 @@
 ### 2019 Class project: (TheToaster)
 
 ![TheToaster][ToasterImage]
-
