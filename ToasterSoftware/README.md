@@ -1,6 +1,6 @@
 ## So far there are 4 functions
 
-### loadToast (???)
+### loadToast (Reyna)
 ### ejectToast (Chi)
 ### toastNotification (Zeke)
-### poller (???)
+### poller (Isabelle)
