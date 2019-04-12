@@ -8,7 +8,7 @@ def main():
 
     print str(rpT.checkHardware())
 
-    print str("Victory Royale")
+    print str("#1 Victory Royale")
 
     return str("Main Function")
 
