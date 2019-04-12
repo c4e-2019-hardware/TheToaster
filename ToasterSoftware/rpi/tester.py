@@ -9,8 +9,7 @@ def main():
     print str(rpT.checkHardware())
 
     print str("chi rules")
-
-    return str("Main Function")
-
+    print str("penguins are awsome")
+    print str("what is your name?")
 if __name__ == "__main__":
     main()
