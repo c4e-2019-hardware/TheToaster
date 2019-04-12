@@ -8,7 +8,7 @@ def main():
 
     print str(rpT.checkHardware())
 
-    print str("jellybean rules")
+    print str("chi rules")
 
     return str("Main Function")
 
