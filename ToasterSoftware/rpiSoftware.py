@@ -33,4 +33,6 @@ class SoftBread:
 
     def ejectToast(self,inSide=None):
         """ For chi to fill out """
-
+     def triggerPullDown(self, side=None):
+        """ Stuff goes here to trigger the pull down servo to pull the toat down, which side right? left? who knows """
+        return None
