@@ -8,7 +8,11 @@ def main():
     ### I am a link to the Utilities Class in the rpiToaster.py file
     rpT = rpiToaster.Utilities()
 <<<<<<< HEAD
+<<<<<<< HEAD
     print str("huvbycvdrszawsdfg")
+=======
+
+>>>>>>> 8723f8ea8576c9539a516c6052f54165d202d10e
     print str("rpT.checkHardware"()
     print str("charge!!!!!!!")
     print str("chi rules")
