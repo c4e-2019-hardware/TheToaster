@@ -5,7 +5,7 @@ import rpiToaster
 def main():
     ### I am a link to the Utilities Class in the rpiToaster.py file
     rpT = rpiToaster.Utilities()
-    print str("huvbycvdrszawsdfg")
+
     print str("rpT.checkHardware"()
     print str("charge!!!!!!!")
     print str("chi rules")
