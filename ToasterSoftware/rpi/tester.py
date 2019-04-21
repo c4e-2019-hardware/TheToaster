@@ -20,6 +20,5 @@ def main():
     print str("Victory Royale")
 
     return str("Main Function")
-
 if __name__ == "__main__":
     main()
