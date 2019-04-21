@@ -1,0 +1,197 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    </head>
+    <body>
+            <script type="application/javascript">
+
+                $( document ).ready(function() {
+                    console.log( "ready!" );
+
+                    var formLeft = $("<form/>", 
+                                    { action:'/myaction' }
+                                );
+                    formLeft.append( 
+                        $("<input>", 
+                            { type:'text', 
+                            placeholder:'Enter Email Please!', 
+                            name:'inEmail', 
+                            id: 'leftEmail',
+                            class: 'leftEmail',
+                            style:'width:65%' }
+                        )
+                    );
+
+                    formLeft.append( 
+                        $("<input>", 
+                            { type:'submit', 
+                                value:'Toast!', 
+                                style:'width:30%' }
+                        )
+                    );
+
+                    $("#theLeftForm").append(formLeft);
+
+                    var formRight = $("<form/>", 
+                                    { action:'/myaction' }
+                                );
+                    formRight.append( 
+                        $("<input>", 
+                            { type:'text', 
+                            placeholder:'Enter Email Please!', 
+                            name:'inEmail', 
+                            id: 'rightEmail',
+                            class: 'rightEmail',
+                            style:'width:65%' }
+                        )
+                    );
+
+                    formRight.append( 
+                        $("<input>", 
+                            { type:'submit', 
+                                value:'Toast!', 
+                                style:'width:30%' }
+                        )
+                    );
+
+                    $("#theRightForm").append(formRight);
+
+
+                    $("#theLeftForm").submit(function(e){
+
+                    e.preventDefault();
+
+                    var data = {}
+                    var Form = this;
+
+                    var rightEmail = $("#leftEmail").val();
+                    data['inEmail'] = rightEmail;
+                    data['inSide'] = 'Left';
+                    data['token'] = 'Id4gLtG4vt7lC94nTMCKP40kk9Aha25Q4e5VfFaI';
+                    //Form Validation goes here....
+
+                    //Save Form Data........
+                    var posturl = "https://2bnfr1wcth.execute-api.us-west-2.amazonaws.com/Prod/runtoast";
+                    //
+                    //
+                    //var posturl = "http://127.0.0.1:5555/";
+                    console.log('Sending data to: '+posturl);
+
+                    console.log('Data '+data);
+
+                    $.ajax({
+                        cache: false,
+                        url : posturl,
+                        headers: {
+                            "x-api-key":"Id4gLtG4vt7lC94nTMCKP40kk9Aha25Q4e5VfFaI"
+                        },
+                        type: "POST",
+                        dataType : "json",
+                        data : JSON.stringify(data),
+                        context : Form,
+                        success : function(callback){
+                            //Where $(this) => context == FORM
+                            console.log(callback);
+                            //console.log(JSON.parse(callback));
+                            $(this).html("Success!");
+
+                            window.setTimeout(function(){
+                            // do whatever you want to do     
+                            }, 60000);
+
+                            location.reload();
+                        },
+                        error : function(){
+                            $(this).html("Error!");
+                        }
+                    });
+
+                    });
+
+                    $("#theRightForm").submit(function(e){
+
+                        console.log( $("#theRightForm").serializeArray() );
+
+                        e.preventDefault();
+
+                        var data = {}
+                        var Form = this;
+
+                        var rightEmail = $("#rightEmail").val();
+                        data['inEmail'] = rightEmail;
+                        data['inSide'] = 'Right';
+                        data['token'] = 'Id4gLtG4vt7lC94nTMCKP40kk9Aha25Q4e5VfFaI';
+                        //Form Validation goes here....
+
+                        //Save Form Data........
+                        var posturl = "https://2bnfr1wcth.execute-api.us-west-2.amazonaws.com/Prod/runtoast";
+                        //
+                        //
+                        //var posturl = "http://127.0.0.1:5555/";
+                        console.log('Sending data to: '+posturl);
+
+                        console.log('Data '+data);
+
+                        $.ajax({
+                            cache: false,
+                            url : posturl,
+                            headers: {
+                                "x-api-key":"Id4gLtG4vt7lC94nTMCKP40kk9Aha25Q4e5VfFaI"
+                            },
+                            type: "POST",
+                            dataType : "json",
+                            data : JSON.stringify(data),
+                            context : Form,
+                            success : function(callback){
+                                //Where $(this) => context == FORM
+                                console.log(callback);
+                                //console.log(JSON.parse(callback));
+                                $(this).html("Success!");
+
+                                window.setTimeout(function(){
+                                // do whatever you want to do     
+                                }, 60000);
+
+                                location.reload();
+                            },
+                            error : function(){
+                                $(this).html("Error!");
+                            }
+                        });
+
+                    });
+                });
+
+        </script>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <center><h1>This is a Test</h1></center>
+        <br/>
+        <br/>
+        <center>
+            <table style="width:100%" border="10px">
+                <tr>
+                        <td>
+                            Left Side
+                        </td>
+                        <td>
+                            Right Side
+                        </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="theLeftForm" class="theLeftForm"></div>
+                    </td>
+                    <td>
+                        <div id="theRightForm" class="theRightForm"></div>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </body>
+</html>
